@@ -75,6 +75,11 @@
                 "default": "Subscribe below to receive my latest posts directly in your inbox",
                 "group": "homepage"
             },
+            "sidebar_home_description": {
+                "type": "text",
+                "default": "my latest projects, case studies, and open-source contributions",
+                "group": "homepage"
+            },
             "post_feed_layout": {
                 "type": "select",
                 "options": ["Classic", "Typographic", "Parallax"],
