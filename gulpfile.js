@@ -2,6 +2,7 @@ const {series, parallel, watch, src, dest} = require('gulp');
 const pump = require('pump');
 const fs = require('fs');
 const order = require('ordered-read-streams');
+const through = require('through2');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
@@ -84,7 +85,8 @@ function zipper(done) {
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
             '!yarn-error.log'
-        ]),
+        ], 
+        { encoding: false }), // Read files as binary to prevent Gulp v5 corruption - https://github.com/gulpjs/gulp/issues/2797
         zip(filename),
         dest('dist/')
     ], handleError(done));
