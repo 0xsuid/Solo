@@ -8,7 +8,7 @@
                         {{img_url feature_image size="l" format="avif"}} 960w,
                         {{img_url feature_image size="xl" format="avif"}} 1200w,
                         {{img_url feature_image size="xxl" format="avif"}} 2000w"
-                sizes="(max-width: 1200px) 100vw, 1200px"
+                sizes="(max-width: 480px) 360px, (max-width: 768px) 720px, (max-width: 1200px) 100vw, 1200px"
             >
             <img
                 srcset="{{img_url feature_image size="s"}} 300w,
@@ -17,8 +17,8 @@
                         {{img_url feature_image size="xl"}} 1200w,
                         {{img_url feature_image size="xxl"}} 2000w,
                         {{img_url feature_image}}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                src="{{img_url feature_image size="xl"}}"
+                sizes="(max-width: 480px) 360px, (max-width: 768px) 720px, (max-width: 1200px) 100vw, 1200px"
+                src="{{img_url feature_image size="m"}}"
                 alt="{{title}}"
                 fetchpriority="high"
             >
