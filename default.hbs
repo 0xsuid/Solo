@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" class="has-dark-text">
 
 <head>
     <meta charset="utf-8">
@@ -23,20 +23,8 @@
         }
     </style>
 
-    <script>
-        /* The script for calculating the color contrast was taken from
-        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
-        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-        accentColor = accentColor.trim().slice(1);
-        var r = parseInt(accentColor.substr(0, 2), 16);
-        var g = parseInt(accentColor.substr(2, 2), 16);
-        var b = parseInt(accentColor.substr(4, 2), 16);
-        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-        var textColor = (yiq >= 128) ? 'dark' : 'light';
-
-        document.documentElement.className = `has-${textColor}-text`;
-    </script>
-
+    {{!-- TODO: Add prefer-color-scheme media query --}}
+    
     {{ghost_head}}
 </head>
 
