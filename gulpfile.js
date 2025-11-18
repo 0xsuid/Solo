@@ -2,7 +2,6 @@ const {series, parallel, watch, src, dest} = require('gulp');
 const pump = require('pump');
 const fs = require('fs');
 const order = require('ordered-read-streams');
-const through = require('through2');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
@@ -57,7 +56,7 @@ function getJsFiles(version) {
         src(`node_modules/@tryghost/shared-theme-assets/assets/js/${version}/main.js`),
     ];
 
-    if (fs.existsSync(`assets/js/lib`)) {
+    if (fs.existsSync(`assets/js/lib`) && fs.readdirSync(`assets/js/lib`).length > 0) {
         jsFiles.push(src(`assets/js/lib/*.js`));
     }
 

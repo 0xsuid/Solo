@@ -1,9 +1,3 @@
-function initParallax() {
-    jarallax(document.querySelectorAll('.has-parallax-feed .gh-card'), {
-        speed: 0.8,
-    });
-}
-
 (function () {
     if (!document.body.classList.contains('has-background-about')) return;
 
@@ -17,10 +11,6 @@ function initParallax() {
             about.style.setProperty('--about-height', image.clientWidth * image.naturalHeight / image.naturalWidth + 'px');
         });
     }
-})();
-
-(function () {
-    initParallax();
 })();
 
 (function () {
@@ -47,8 +37,4 @@ function initParallax() {
     });
 
     element.innerHTML = text;
-})();
-
-(function () {
-    pagination(true, initParallax);
 })();
