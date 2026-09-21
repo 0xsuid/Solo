@@ -7,3 +7,5 @@ allowBuilds:
   # Optional dtrace bindings for bunyan (a gscan dependency); not needed to
   # build, test, or zip the theme.
   dtrace-provider: false
+minimumReleaseAgeExclude:
+  - '@tryghost/shared-theme-assets@2.7.5'
